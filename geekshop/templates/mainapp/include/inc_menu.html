@@ -1,0 +1,10 @@
+				<ul class="menu">
+				{% for element in mainapp_list %}
+					<li><a href="{% url element.view_name %}"
+					{% if request.resolver_match.url_name == element.view_name %}
+					class="active"
+					{% endif %}
+					>{{element.link_name}}</a></li>
+				{% endfor %}
+				</ul>
+				<a href="#" class="search"></a>
